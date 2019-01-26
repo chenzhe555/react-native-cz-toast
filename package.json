@@ -1,0 +1,23 @@
+
+{
+  "name": "react-native-cz-toast",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "toast",
+    "custom"
+  ],
+  "author": "陈哲是个好孩子",
+  "license": "MIT",
+  "dependencies": {
+    "react-native-cz-pack-element": "0.0.3"
+  },
+  "devDependencies": {
+    "react-native-cz-pack-element": "0.0.3"
+  }
+}
