@@ -12,8 +12,8 @@ import Toast from 'react-native-cz-toast';
 
 <Toast evaluateView={ (toast) => {this.toast = toast}}></Toast>
 ```
-
-###  2.方法说明:
+###  2.属性:
+###  3.属性方法:
 ```
 /*
 * 赋值当前视图对象
@@ -21,6 +21,7 @@ import Toast from 'react-native-cz-toast';
 evaluateView
 ```
 
+###  4.供外部调用的方法:
 ```
 /*
 * 显示Toast
