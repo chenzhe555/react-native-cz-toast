@@ -8,12 +8,17 @@ npm install react-native-cz-toast --save
 ## Usage
 ###  1.引入组件
 ```
-import RNCZLoading from 'react-native-cz-loading';
+import Toast from 'react-native-cz-toast';
 
 <Toast evaluateView={ (toast) => {this.toast = toast}}></Toast>
 ```
 
 ###  2.方法说明:
+/*
+* 赋值当前视图对象
+* */
+evaluateView
+
 ```
 /*
 * 显示Toast
