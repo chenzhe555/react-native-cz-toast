@@ -35,8 +35,10 @@ export default class CZToast extends Component {
     * 显示Toast
     * text: 显示的文本信息
     * extraData: 额外参数:{
-    *   type: 显示类型
+    *   type: 显示类型：目前默认只有1，可不填
+    *   showType: 显示位置类型：1.底部 2.中间 3.顶部。默认是2
     *   during: 显示间隔时间(秒,默认1.5秒)
+    *   textStyle: 文本视图样式：默认：{marginLeft: 16, marginRight: 16, marginBottom: 15, marginTop: 15}
     * }
     * */
     show(text = '', extraData = {}) {
@@ -92,10 +94,11 @@ export default class CZToast extends Component {
         //Text相对坐标
         let mLeft = data['marginLeft'] ? data['marginLeft'] : 16;
         let mRight = data['marginRight'] ? data['marginRight'] : 16;
-        let mBottom = data['marginTop'] ? data['marginTop'] : 15;
+        let mBottom = data['marginBottom'] ? data['marginBottom'] : 15;
         let mTop = data['marginTop'] ? data['marginTop'] : 15;
 
         if (type == 1) {
+            //总视图样式
             let stylesArr = [];
             stylesArr.push(styles.MainView);
             if (showType == 1) {
@@ -111,11 +114,17 @@ export default class CZToast extends Component {
                     top: 60
                 });
             }
+
+            //文本样式
+            let textStyles = [];
+            textStyles.push(styles.TextView);
+            if (data['textStyle']) textStyles.push(data['textStyle']);
+
             return (
                 <View style={[stylesArr]}>
                     <View style={[styles.ContentView, {width: (SCREENW - 48)}]}>
                         <View style={[{backgroundColor: 'rgba(0,0,0,0.3)',borderRadius: 4}]}>
-                            <Text style={[styles.TextView, {marginLeft: mLeft, marginRight: mRight, marginBottom: mBottom, marginTop: mTop}]}>{text}</Text>
+                            <Text style={textStyles}>{text}</Text>
                         </View>
                     </View>
                 </View>
@@ -141,7 +150,11 @@ const styles = StyleSheet.create({
 
     TextView: {
         fontSize: 14,
-        color: 'white'
+        color: 'white',
+        marginLeft: 15,
+        marginRight: 15,
+        marginBottom: 10,
+        marginTop: 10
     }
 })
 
