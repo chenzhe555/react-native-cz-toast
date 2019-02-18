@@ -14,10 +14,12 @@ import Toast from 'react-native-cz-toast';
 ```
 
 ###  2.方法说明:
+```
 /*
 * 赋值当前视图对象
 * */
 evaluateView
+```
 
 ```
 /*
