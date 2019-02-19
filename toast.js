@@ -35,7 +35,7 @@ export default class ToastView extends Component{
         //显示类型
         let type = data['type'] ? data['type'] : 1;
         //Toast相对位置
-        let showType = data['showType'] ? data['showType'] : 3;
+        let showType = data['showType'] ? data['showType'] : 2;
         let img = data['img'];
 
         if (type == 1) {
