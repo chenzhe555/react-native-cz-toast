@@ -42,25 +42,25 @@ export default class CZToast extends Component {
         extraData['text'] = text;
         extraData['during'] = (parseFloat(extraData['during'] ? extraData['during'] : 1.5))*1000;
         extraData['img'] = img;
-        this.showArr.push(extraData);
+        CZToast.showArr.push(extraData);
         //显示Toast
-        if (!this.isShowToast) this.showToast();
+        if (!CZToast.isShowToast) CZToast.showToast();
     }
 
     //显示Toast
     static showToast = () => {
         //当前显示数组第一个Toast对象
-        let item = this.showArr[0];
+        let item = CZToast.showArr[0];
         let element = new CZPackElement(<Toast data={item}/>);
-        this.isShowToast = true;
+        CZToast.isShowToast = true;
         //during时间后再做逻辑判断
         setTimeout( () => {
             element.destoryElement();
-            this.showArr.splice(0,1);
-            if (this.showArr.length > 0) {
-                this.showToast();
+            CZToast.showArr.splice(0,1);
+            if (CZToast.showArr.length > 0) {
+                CZToast.showToast();
             } else {
-                this.isShowToast = false;
+                CZToast.isShowToast = false;
             }
         }, item['during']);
     }
