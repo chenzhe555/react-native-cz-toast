@@ -3,6 +3,10 @@
 
 npm install react-native-cz-toast --save
 
+###依赖库
+
+npm install react-native-cz-pack-element --save
+
 	
 
 ## Usage
