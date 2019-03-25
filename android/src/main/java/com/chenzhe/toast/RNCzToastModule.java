@@ -25,6 +25,6 @@ public class RNCzToastModule extends ReactContextBaseJavaModule {
         if(getCurrentActivity() == null|| getCurrentActivity().isFinishing()) {
             return;
         }
-        Toasts.init().show(getCurrentActivity(),text,type,time);
+        new Toasts().show(getCurrentActivity(),text,type,time);
     }
 }
