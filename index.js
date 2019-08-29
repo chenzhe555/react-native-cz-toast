@@ -81,7 +81,8 @@ export default class CZToast extends Component {
         let item = CZToast.showArr[0];
         CZToast.isShowToast = true;
 
-        if (item['native'] == 0) {
+        // if (item['native'] == 0) {
+        if (1) {
             //RN
             let element = new CZPackElement(<Toast data={item}/>);
             //during时间后再做逻辑判断
