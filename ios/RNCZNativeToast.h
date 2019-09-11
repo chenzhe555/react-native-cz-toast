@@ -6,15 +6,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, RNCZNativeToastType){
     RNCZNativeToastTypeOnlyOnce,
     RNCZNativeToastTypeAlways
 };
 
+typedef NS_ENUM(NSUInteger, RNCZNativeToastShowType) {
+    RNCZNativeToastShowTypeBottom = 1,
+    RNCZNativeToastShowTypeCenter,
+    RNCZNativeToastShowTypeTop,
+};
+
+
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RNCZNativeToast : NSObject
+// TODO: 先直接复制代码放这，有时间换掉
+@interface RNCZNativeToast : UIView
 /**
  *  放置控件的View
  */
@@ -47,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)showAlertView;
 
 
--(void)showToastType:(RNCZNativeToastType)type text:(NSString *)text time:(CGFloat)time;
+-(void)showToastType:(RNCZNativeToastShowType)type text:(NSString *)text time:(CGFloat)time;
 @end
 
 NS_ASSUME_NONNULL_END
