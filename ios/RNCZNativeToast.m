@@ -220,13 +220,13 @@ static BOOL isHavaBlock;
     }
     self.bgView.frame = self.bounds;
     
-    dispatch_time_t toastDelay = dispatch_time(DISPATCH_TIME_NOW, kMCToastViewDuring * NSEC_PER_SEC);
-    dispatch_queue_t currentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_after(toastDelay, currentQueue, ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self stopToastView];
-        });
-    });
+    #dispatch_time_t toastDelay = dispatch_time(DISPATCH_TIME_NOW, kMCToastViewDuring * NSEC_PER_SEC);
+    #dispatch_queue_t currentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    #dispatch_after(toastDelay, currentQueue, ^{
+    #    dispatch_async(dispatch_get_main_queue(), ^{
+    #        [self stopToastView];
+    #    });
+    #});
     
     [self.showTimer invalidate];
     self.showTimer = nil;
