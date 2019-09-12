@@ -82,7 +82,7 @@ static BOOL isHavaBlock;
         self.bgView.alpha = kMCToastViewAlpha;
         
         self.bgView = [[UIView alloc] init];
-        self.bgView.backgroundColor = [UIColor grayColor];
+        self.bgView.backgroundColor = [UIColor colorWithRed:58/255.0 green:58/255.0 blue:58/255.0 alpha:0.9];
         self.bgView.layer.cornerRadius = 5.0f;
         self.bgView.layer.masksToBounds = YES;
         [self addSubview:self.bgView];
