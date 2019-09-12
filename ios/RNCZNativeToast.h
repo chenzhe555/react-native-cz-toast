@@ -14,9 +14,9 @@ typedef NS_ENUM(NSInteger, RNCZNativeToastType){
 };
 
 typedef NS_ENUM(NSUInteger, RNCZNativeToastShowType) {
-    RNCZNativeToastShowTypeBottom = 1,
-    RNCZNativeToastShowTypeCenter,
-    RNCZNativeToastShowTypeTop,
+    RNCZNativeToastShowTypeBottom = 1001,
+    RNCZNativeToastShowTypeCenter = 1002,
+    RNCZNativeToastShowTypeTop = 1003,
 };
 
 
