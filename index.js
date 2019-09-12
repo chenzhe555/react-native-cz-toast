@@ -96,7 +96,15 @@ export default class CZToast extends Component {
             }, item['during']*1000);
         } else {
             //Native
-            RNCzToast.showToastWithType(item['showType'], item['text'], item['during']);
+            let type = 0;
+            if (item['showType'] == 1) {
+                type = 1001;
+            } else if (item['showType'] == 2) {
+                type = 1002;
+            } else {
+                type = 1003;
+            }
+            RNCzToast.showToastWithType(type, item['text'], item['during']);
             //during时间后再做逻辑判断
             setTimeout( () => {
                 CZToast.showArr.splice(0,1);
